@@ -1,0 +1,29 @@
+
+ #spring:
+  #application:
+   # name: EducationDepartment
+  #server:
+  #port: 8090
+  #eureka:
+  #client:
+   #serviceUrl:
+    # defaultZone: http://localhost:9010/eureka
+ #instance:
+  #  preferIpAddress: true
+
+
+
+spring:
+  application:
+    name: e-education
+server:
+  port: 8090
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 20
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.10.10:8761/eureka
